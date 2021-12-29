@@ -71,12 +71,15 @@ public class Updater {
 
             try ( BufferedWriter bw = new BufferedWriter( new FileWriter( this.ipChecker.getLastIPFile() ) ) ) {
                 bw.write( this.ipChecker.getCurrentIP() );
+                logger.log( "Az új IP cím (" + this.ipChecker.getCurrentIP() + ") rögzítése fájlba sikeres." );
             } catch ( IOException e ) {
                 e.printStackTrace();
             }
         } catch ( NoSuchElementException e ) {
             WebElement errtipElement = mainContentElement.findElement( By.className( "errtip" ) );
             logger.log(errtipElement.getText().replace( "\n", " " ) );
+            driver.quit();
+            return false;
         }
 
         logger.log( "Kijelentkezés..." );
