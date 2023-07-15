@@ -7,7 +7,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library" exported="">
+    <orderEntry type="module-library">
       <library>
         <CLASSES>
           <root url="jar://$MODULE_DIR$/../../../../JDK/Selenium/htmlunit-driver-3.55.0-jar-with-dependencies.jar!/" />
@@ -25,5 +25,32 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../../../../JDK/Selenium" />
+          <root url="file://$MODULE_DIR$/../../../../JDK/Selenium/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/../../../../JDK/Selenium" />
+        </SOURCES>
+        <jarDirectory url="file://$MODULE_DIR$/../../../../JDK/Selenium" recursive="false" />
+        <jarDirectory url="file://$MODULE_DIR$/../../../../JDK/Selenium/lib" recursive="false" />
+        <jarDirectory url="file://$MODULE_DIR$/../../../../JDK/Selenium" recursive="false" type="SOURCES" />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" exported="" name="google.guava" level="project" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../../../../JDK/HttpComponents" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/../../../../JDK/HttpComponents" recursive="false" />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" exported="" name="dev.failsafe" level="project" />
   </component>
 </module>
