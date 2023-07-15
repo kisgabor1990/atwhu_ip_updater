@@ -1,15 +1,18 @@
 import java.io.File;
 import java.net.URISyntaxException;
+import java.util.Scanner;
 
-public class Main {
+public class Main
+{
 
     public static final String APP_DIR = getAppDir();
 
-    public static void main(String[] args) {
-        Logger logger = new Logger("app");
+    public static void main( String[] args ) {
+        Scanner scanner = new Scanner( System.in );
+        Logger  logger  = new Logger( "app" );
         Updater updater = new Updater();
 
-        logger.log("Az alkalmazás indítása...");
+        logger.log( "Az alkalmazás indítása..." );
 
         logger.log( "Adatok beolvasása a settings.conf fájlból..." );
         if ( !updater.settings.isValidSettings() ) {
@@ -33,12 +36,12 @@ public class Main {
         }
 
         logger.log( "Kilépés az alkalmazásból..." );
-
+        scanner.close();
     }
 
     private static String getAppDir() {
         try {
-            return new File(Main.class.getProtectionDomain().getCodeSource().getLocation().toURI()).getParent() + File.separator;
+            return new File( Main.class.getProtectionDomain().getCodeSource().getLocation().toURI() ).getParent() + File.separator;
         } catch ( URISyntaxException e ) {
             e.printStackTrace();
             return "";
