@@ -21,10 +21,10 @@ public class Updater
     }
 
     public boolean update() {
-        System.setProperty( "webdriver.chrome.driver", Main.APP_DIR + "chromedriver.exe" );
+        System.setProperty( "webdriver.chrome.driver", "/usr/bin/chromedriver" );
         ChromeOptions options = new ChromeOptions();
         options.addArguments(
-                "--headless",
+                "--headless=new",
                 "--disable-gpu",
                 "--window-size=1920,1080",
                 "--ignore-certificate-errors",
