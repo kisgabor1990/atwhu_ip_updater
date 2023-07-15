@@ -32,7 +32,7 @@ public class Updater
                 "--no-sandbox",
                 "--disable-dev-shm-usage"
         );
-        WebDriver     driver = new ChromeDriver();
+        WebDriver     driver = new ChromeDriver( options );
         WebDriverWait wait   = new WebDriverWait( driver, Duration.ofSeconds( 30 ) );
 
         try {
@@ -84,7 +84,7 @@ public class Updater
             WebElement overlay    = wait.until( ExpectedConditions.elementToBeClickable( By.id( "overlay" ) ) );
             WebElement overlayBox = overlay.findElement( By.id( "overlaybox" ) );
             WebElement okButton   = overlay.findElement( By.tagName( "button" ) );
-            if ( !overlayBox.getText().contains( "Siker" ) ) {
+            if ( ! overlayBox.getText().contains( "Siker" ) ) {
                 throw new Exception( "Sikertelen módosítás!" );
             }
             logger.log( "Sikeres módosítás!" );
